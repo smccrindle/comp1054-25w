@@ -5,9 +5,9 @@ html {
 }
 /* STEP 7: Collapse borders */
 table {
-    border-collapse: separate;
+    border-collapse: collapse;
     empty-cells: hide;
-    /* https://developer.mozilla.org/en-US/docs/Web/CSS/empty-cells */
+    /* Hiding empty cells is tricky - see last rule at the bottom of this CSS (https://developer.mozilla.org/en-US/docs/Web/CSS/empty-cells) */
 /* STEP 9a: Adjust placement of table caption */
     caption-side: top;
 /* STEP 9b: Try different values for table-layout (https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout) in conjunction with the width property. */
@@ -51,7 +51,9 @@ caption {
     font-size: 150%;
 }
 /* STEP 10c: Have a look at the result in the browser, then head to js/tables.js for the next step */
-/* thead th:nth-child(1) {
+
+/* EXTRA - We can style (or hide) any cells that have no child elements or text nodes (https://developer.mozilla.org/en-US/docs/Web/CSS/:empty) */
+thead th:empty {
     background-color: transparent;
-    border-width: 0, 1px, 1px, 0;
-} */
+    border: none;
+}
