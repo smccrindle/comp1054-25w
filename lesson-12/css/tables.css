@@ -5,13 +5,14 @@ html {
 }
 /* STEP 7: Collapse borders */
 table {
-    border-collapse: collapse;
+    border-collapse: separate;
+    empty-cells: hide;
+    /* https://developer.mozilla.org/en-US/docs/Web/CSS/empty-cells */
 /* STEP 9a: Adjust placement of table caption */
     caption-side: top;
 /* STEP 9b: Try different values for table-layout (https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout) in conjunction with the width property. */
     table-layout: auto;
     width: 80%;
-    empty-cells: hide;
 }
 /* STEP 10b: Zebra striping for columns */
 colgroup + colgroup col:nth-child(1) {
